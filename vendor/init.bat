@@ -2,7 +2,6 @@
 :: Sets some nice defaults
 :: Created as part of cmder project
 
-
 :: Setting prompt style
 @for /f "tokens=2 delims=:." %%x in ('chcp') do @set cp=%%x
 :: The slow part
@@ -20,7 +19,14 @@
     set architecture=64
 )
 
-@set rootDir="%~dp0\.."
+@set rootDir=%~dp0..
+@set clinkDir=%USERPROFILE%\AppData\Local\clink
+
+@if not exist "%clinkDir%\git.lua" (
+	::@echo f | @xcopy /Y /Q "%rootDir%\config\git.lua" "%clinkDir%\git.lua" > NUL
+	copy /Y "%rootDir%\config\git.lua" "%clinkDir%\git.lua" > NUL
+)
+
 
 :: Run clink
 @%rootDir%\vendor\clink\clink_x%architecture%.exe inject --quiet --profile %rootDir%\config
@@ -36,6 +42,10 @@
 @set PATH=%PATH%;%rootDir%\bin;%git_install_root%\bin;%git_install_root%\mingw\bin;%git_install_root%\cmd;%git_install_root%\share\vim\vim73;
 
 :: Add aliases
+@if not exist "%USERPROFILE%\cmder.aliases" (
+	@cat "%rootDir%\config\aliases" > "%USERPROFILE%\cmder.aliases"
+)
+
 @doskey /macrofile="%rootDir%\config\aliases"
 
 :: Set home path

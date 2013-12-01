@@ -1,0 +1,59 @@
+Windows Registry Editor Version 5.00
+
+
+;"Icon"="C:\\cmder\\vendor\\conemu-maximus5\\ConEmu64.exe,0"
+; "c:\cmder\vendor\conemu-maximus5\ConEmu64.exe" /Dir "%%CMDER_ROOT%%" /Title Cmder /Icon "%%CMDER_ROOT%%\icons\cmder.ico" /LoadCfgFile "%%CMDER_ROOT%%\config\ConEmu.xml" /cmd cmd /k "%%CMDER_ROOT%%\vendor\init.bat" -new_console:d:%V
+
+[HKEY_CLASSES_ROOT\Directory\shell\Cmder Here]
+@="Cmder Here"
+"Icon"="%CMDER_ROOT%\\icons\\cmder.ico,0"
+[HKEY_CLASSES_ROOT\Directory\shell\Cmder Here\command]
+@="\"c:\\cmder\\vendor\\conemu-maximus5\\ConEmu64.exe\" /Dir \"%%CMDER_ROOT%%\" /Title Cmder /Icon \"%%CMDER_ROOT%%\\icons\\cmder.ico\" /LoadCfgFile \"%%CMDER_ROOT%%\\config\\ConEmu.xml\" /cmd cmd /k \"%%CMDER_ROOT%%\\vendor\\init.bat\" \"-new_console:d:%V\""
+
+
+[HKEY_CLASSES_ROOT\Directory\shell\runas]
+@="Cmder Here as Administrator"
+"HasLuaShield"=""
+"Icon"="%CMDER_ROOT%\\icons\\cmder.ico,0"
+"Extended"=""
+[HKEY_CLASSES_ROOT\Directory\shell\runas\command]
+@="\"c:\\cmder\\vendor\\conemu-maximus5\\ConEmu64.exe\" /Dir \"%%CMDER_ROOT%%\" /Title Cmder /Icon \"%%CMDER_ROOT%%\\icons\\cmder.ico\" /LoadCfgFile \"%%CMDER_ROOT%%\\config\\ConEmu.xml\" /cmd cmd /k \"%%CMDER_ROOT%%\\vendor\\init.bat\" \"-new_console:d:%V\""
+
+
+
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\Cmder Here]
+@="Cmder Here"
+"Icon"="%CMDER_ROOT%\\icons\\cmder.ico,0"
+[HKEY_CLASSES_ROOT\Directory\Background\shell\Cmder Here\command]
+@="\"c:\\cmder\\vendor\\conemu-maximus5\\ConEmu64.exe\" /Dir \"%%CMDER_ROOT%%\" /Title Cmder /Icon \"%%CMDER_ROOT%%\\icons\\cmder.ico\" /LoadCfgFile \"%%CMDER_ROOT%%\\config\\ConEmu.xml\" /cmd cmd /k \"%%CMDER_ROOT%%\\vendor\\init.bat\" \"-new_console:d:%V\""
+
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\runas]
+@="Cmder Here as Administrator"
+"HasLuaShield"=""
+"Icon"="%CMDER_ROOT%\\icons\\cmder.ico,0"
+"Extended"=""
+[HKEY_CLASSES_ROOT\Directory\Background\shell\runas\command]
+@="\"c:\\cmder\\vendor\\conemu-maximus5\\ConEmu64.exe\" /Dir \"%%CMDER_ROOT%%\" /Title Cmder /Icon \"%%CMDER_ROOT%%\\icons\\cmder.ico\" /LoadCfgFile \"%%CMDER_ROOT%%\\config\\ConEmu.xml\" /cmd cmd /k \"%%CMDER_ROOT%%\\vendor\\init.bat\" \"-new_console:d:%V\""
+
+
+
+
+[HKEY_CLASSES_ROOT\Drive\shell\Cmder Here]
+@="Cmder Here"
+"Icon"="%CMDER_ROOT%\\icons\\cmder.ico,0"
+[HKEY_CLASSES_ROOT\Drive\shell\Cmder Here\command]
+@="\"c:\\cmder\\vendor\\conemu-maximus5\\ConEmu64.exe\" /Dir \"%%CMDER_ROOT%%\" /Title Cmder /Icon \"%%CMDER_ROOT%%\\icons\\cmder.ico\" /LoadCfgFile \"%%CMDER_ROOT%%\\config\\ConEmu.xml\" /cmd cmd /k \"%%CMDER_ROOT%%\\vendor\\init.bat\" \"-new_console:d:%V\""
+
+
+[HKEY_CLASSES_ROOT\Drive\shell\runas]
+@="Cmder Here as Administrator"
+"HasLuaShield"=""
+"Icon"="%CMDER_ROOT%\\icons\\cmder.ico,0"
+"Extended"=""
+[HKEY_CLASSES_ROOT\Drive\shell\runas\command]
+@="\"c:\\cmder\\vendor\\conemu-maximus5\\ConEmu64.exe\" /Dir \"%%CMDER_ROOT%%\" /Title Cmder /Icon \"%%CMDER_ROOT%%\\icons\\cmder.ico\" /LoadCfgFile \"%%CMDER_ROOT%%\\config\\ConEmu.xml\" /cmd cmd /k \"%%CMDER_ROOT%%\\vendor\\init.bat\" \"-new_console:d:%V\""
+
+
+
