@@ -1,8 +1,28 @@
 @echo off
 
 
-
 @set "cmderDir=%~dp0"
+
+
+:: Check for Mandatory Label\High Mandatory Level 
+whoami /groups | find "S-1-16-12288" > nul 
+if "%errorlevel%"=="0" ( 
+    echo Running as elevated user.  Continuing script. 
+) else ( 
+    echo Not running as administrator. 
+	echo Aborting...
+	echo.
+	echo Don't run on a ComEmu shell or registry will fail because ComEmu hijacks new_console flags
+	echo.
+	echo.
+
+	PAUSE
+	
+    goto :EOF 
+)
+
+
+
 
 @set "ShellCtxDesc=Cmder Here"
 
@@ -34,3 +54,6 @@ setlocal enableextensions enabledelayedexpansion
 )
 
 endlocal
+
+:EOF
+

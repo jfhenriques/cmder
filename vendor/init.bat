@@ -1,3 +1,5 @@
+@echo off
+
 :: Init Script for cmd.exe
 :: Sets some nice defaults
 :: Created as part of cmder project
@@ -22,14 +24,20 @@
 @set rootDir=%~dp0..
 @set clinkDir=%USERPROFILE%\AppData\Local\clink
 
+@if not exist "%clinkDir%" (
+	mkdir "%clinkDir%" > NUL
+)
+
 @if not exist "%clinkDir%\git.lua" (
-	::@echo f | @xcopy /Y /Q "%rootDir%\config\git.lua" "%clinkDir%\git.lua" > NUL
 	copy /Y "%rootDir%\config\git.lua" "%clinkDir%\git.lua" > NUL
 )
 
+@if not exist "%USERPROFILE%\cmder.aliases" (
+	copy /Y "%rootDir%\config\aliases" "%USERPROFILE%\cmder.aliases" > NUL
+)
 
 :: Run clink
-@%rootDir%\vendor\clink\clink_x%architecture%.exe inject --quiet --profile %rootDir%\config
+@%rootDir%\vendor\clink\clink_x%architecture%.exe inject --quiet --profile "%clinkDir%"
 
 :: Prepare for msysgit
 
@@ -42,11 +50,7 @@
 @set PATH=%PATH%;%rootDir%\bin;%git_install_root%\bin;%git_install_root%\mingw\bin;%git_install_root%\cmd;%git_install_root%\share\vim\vim73;
 
 :: Add aliases
-@if not exist "%USERPROFILE%\cmder.aliases" (
-	@cat "%rootDir%\config\aliases" > "%USERPROFILE%\cmder.aliases"
-)
-
-@doskey /macrofile="%rootDir%\config\aliases"
+@doskey /macrofile="%USERPROFILE%\cmder.aliases"
 
 :: Set home path
 @set HOME=%USERPROFILE%
